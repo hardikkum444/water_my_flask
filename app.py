@@ -6,11 +6,11 @@ app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db' 
 #using easy sqlite ///-> relative path ////-> absolute path
 
-db = SQLALCHEMY(app) #initialising the database
+db = SQLAlchemy(app) #initialising the database
 
 #creating the databse model
 class Todo(db.Model):
-    id = db.Column(db.integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True)
     content = db.Column(db.String(200), nullable=False)
     date_created = db.Column(db.DateTime, default=datetime.utcnow) #for basic book-keeping
     
@@ -23,3 +23,4 @@ def index():
 
 if __name__=="__main__":
     app.run(debug=True)
+
