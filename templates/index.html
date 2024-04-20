@@ -17,14 +17,19 @@
             <th>Added</th> <!-- Corrected closing tag -->
             <th>Actions</th> <!-- Corrected closing tag -->
         </tr>
-        <tr>
-            <td>Sample Data</td> <!-- Example content -->
-            <td>Sample Date</td> <!-- Example content -->
-            <td>
-                <a href="">Delete</a><br>
-                <a href="">Update</a>
-            </td>
-        </tr>
+        
+        {% for task in tasks %}
+
+            <tr>
+                <td>{{ task.content }}</td> <!-- Example content -->
+                <td>{{ task.date_created.date() }}</td> <!-- Example content -->
+                <td>
+                    <a href="">Delete</a><br>
+                    <a href="">Update</a>
+                </td>
+            </tr>
+        {% endfor %}
+
     </table>
 
     <form actions="/" method="POST">
