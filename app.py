@@ -32,7 +32,7 @@ def index():
 
         except:
             return "Error"
-    else:
+    else:   #which is a 'GET'
         tasks = Todo.query.order_by(Todo.date_created).all()
         return render_template('index.html', tasks=tasks)
 
@@ -47,6 +47,15 @@ def delete(id):
         return redirect('/')
     except:
         return "Error"
+
+@app.route('/update/<int:id>', methods=['GET', 'POST'])
+def update(id):
+    task = Todo.query.get_or_404(id)
+
+    if request.method == 'POST':
+        pass
+    else:
+        return render_template('update.html', task=task)
 
 with app.app_context():
     db.create_all()
