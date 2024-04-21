@@ -14,17 +14,17 @@
     <table>
         <tr>
             <th>Stuff</th>
-            <th>Added</th> <!-- Corrected closing tag -->
-            <th>Actions</th> <!-- Corrected closing tag -->
+            <th>Added</th> 
+            <th>Actions</th> 
         </tr>
         
         {% for task in tasks %}
 
             <tr>
-                <td>{{ task.content }}</td> <!-- Example content -->
-                <td>{{ task.date_created.date() }}</td> <!-- Example content -->
+                <td>{{ task.content }}</td> 
+                <td>{{ task.date_created.date() }}</td> 
                 <td>
-                    <a href="">Delete</a><br>
+                    <a href="/delete/{{ task.id }}">Delete</a><br>
                     <a href="">Update</a>
                 </td>
             </tr>

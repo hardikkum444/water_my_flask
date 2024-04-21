@@ -5,8 +5,19 @@ body {
 
 table {
     border-collapse: collapse;
+    width: 50%;
 }
 
 th, td {
-    border: 1px solid black;
+    text-align: center;
+    border: 2px solid black;
+}
+
+#content {
+    width: 40%;
+    align: center;
+}
+
+.form {
+    margin-top: 50px;
 }
